@@ -1,0 +1,3 @@
+D:/PROGA/Proga/C++/laba_1_MethodGausa/build/CMakeFiles/main.dir
+D:/PROGA/Proga/C++/laba_1_MethodGausa/build/CMakeFiles/edit_cache.dir
+D:/PROGA/Proga/C++/laba_1_MethodGausa/build/CMakeFiles/rebuild_cache.dir
