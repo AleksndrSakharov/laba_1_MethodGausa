@@ -220,9 +220,7 @@ int main()
     delete[] copy_b;
     delete[] X;
     delete[] b;
-    delete[] matrix;
     delete[] copy_matrix;
-    return 0;
     delete[] matrix;
     return 0;
 }
