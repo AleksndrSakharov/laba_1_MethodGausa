@@ -15,17 +15,17 @@ void printMatrix(int matrix_size, double **matrix, double *b)
     cout << endl;
 }
 
-void zeroTo(int matrix_size, double **matrix, double *b)
+void zeroTo(int matrix_size, double **matrix, double *b, int main_elem_count)
 {
-    for (int i = 0; i < matrix_size; i++)
+    for (int i = main_elem_count; i < matrix_size; i++)
     {
-        if (matrix[i][0] != 0)
+        if (matrix[i][main_elem_count] != 0)
         {
-            for (int j = 0; j < matrix_size; j++)
+            for (int j = main_elem_count; j < matrix_size; j++)
             {
-                matrix[0][j] += matrix[i][j];
+                matrix[main_elem_count][j] += matrix[i][j];
             }
-            b[0] += b[i];
+            b[main_elem_count] += b[i];
             break;
         }
     }
@@ -90,9 +90,6 @@ int main()
             cout << endl;
         }
     }
-    if (matrix[0][0] == 0)
-        zeroTo(matrix_size, matrix, b);
-
     // PRINT
     printMatrix(matrix_size, matrix, b);
 
@@ -100,11 +97,10 @@ int main()
     while (main_elem_count < matrix_size)
     {
         if (matrix[main_elem_count][main_elem_count] == 0)
-            main_elem_count++;
-
+            zeroTo(matrix_size, matrix, b, main_elem_count);
         if (count_i == main_elem_count && count_j == main_elem_count && matrix[main_elem_count][main_elem_count] != 0)
         { // PREVRASHENIE STROKI MAIN ELEMENT TAK SHTOBI MAIN ELEM == 1
-            if (matrix[count_i][count_j] != 0)
+            if (matrix[count_i][count_j] != 0 && matrix[count_i][count_j] != 1)
                 coef = 1 / matrix[count_i][count_j];
             b[count_i] *= coef;
         }
@@ -151,7 +147,16 @@ int main()
     while (main_elem_count > 0)
     {
         if (matrix[main_elem_count][main_elem_count] == 0)
-            main_elem_count--;
+            zeroTo(matrix_size, matrix, b, main_elem_count);
+
+        if (count_i == main_elem_count && count_j == main_elem_count && matrix[main_elem_count][main_elem_count] != 0)
+        { // PREVRASHENIE STROKI MAIN ELEMENT TAK SHTOBI MAIN ELEM == 1
+            if (matrix[count_i][count_j] != 0 && matrix[count_i][count_j] != 1)
+                coef = 1 / matrix[count_i][count_j];
+            b[count_i] *= coef;
+        }
+        if (count_i == main_elem_count && coef != 1.0)
+            matrix[count_i][count_j] *= coef;
 
         // ВЫСЧИТЫВАНИЕ ОСТАЛЬНЫХ СТРОК
         if (count_i < main_elem_count && flag == false)

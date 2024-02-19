@@ -1,8 +1,7 @@
 [
 {
-  "directory": "D:/PROGA/Proga/C++/laba_1_MethodGausa/build",
-  "command": "C:\\MinGW\\bin\\g++.exe   -g -o CMakeFiles\\main.dir\\main.cpp.obj -c D:\\PROGA\\Proga\\C++\\laba_1_MethodGausa\\main.cpp",
-  "file": "D:/PROGA/Proga/C++/laba_1_MethodGausa/main.cpp",
-  "output": "CMakeFiles/main.dir/main.cpp.obj"
+  "directory": "/home/s23380346@unn.global/Sakharov/3823B1FI3/laba_1_MethodGausa/build",
+  "command": "/usr/bin/g++-12   -g -o CMakeFiles/main.dir/main.cpp.o -c /home/s23380346@unn.global/Sakharov/3823B1FI3/laba_1_MethodGausa/main.cpp",
+  "file": "/home/s23380346@unn.global/Sakharov/3823B1FI3/laba_1_MethodGausa/main.cpp"
 }
 ]
