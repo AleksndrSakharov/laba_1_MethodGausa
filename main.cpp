@@ -52,6 +52,17 @@ bool verificationOfCorrectness(int matrix_size, double **matrix, double *b)
     cout << endl;
 }
 
+bool verificationOfZero(int matrix_size, double **matrix, int stroka)
+{
+    int flag = 0;
+    for (int i = 0; i < matrix_size; i++)
+    {
+        if (matrix[stroka][i] == 0) flag++;
+    }
+    if (flag == matrix_size) return true;
+    return false;
+}
+
 int main()
 {
 
@@ -196,8 +207,17 @@ int main()
     {
         double *vecNev = new double[matrix_size];
         for (int i = 0; i < matrix_size; i++){
+            if (verificationOfZero(matrix_size, matrix, i) == true){
+                cout << "multiple solutions" << endl;
+                break;
+            }
+        }
+        for (int i = 0; i < matrix_size; i++){
             vecNev[i] = 0;
-            cout << "x[" << i << "] = " << b[i] << endl;
+            if (verificationOfZero(matrix_size, matrix, i) == false){
+                cout << "x[" << i + 1 << "] = " << b[i] << endl;
+            }
+                
         }
         
         for (int i = 0; i < matrix_size; i++)
