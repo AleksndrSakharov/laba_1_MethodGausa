@@ -196,7 +196,7 @@ int main()
         {
             for (int j = 0; j < matrix_size; j++)
             {
-                vecNev[i] -= copy_matrix[i][j] * b[i];
+                vecNev[i] -= copy_matrix[i][j] * b[j];
             }
         }
         cout << "VECTOR NEVYAZKI = (";
