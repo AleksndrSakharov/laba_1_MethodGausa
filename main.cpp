@@ -195,8 +195,11 @@ int main()
     if (verificationOfCorrectness(matrix_size, matrix, b) == true)
     {
         double *vecNev = new double[matrix_size];
-        for (int i = 0; i < matrix_size; i++)
+        for (int i = 0; i < matrix_size; i++){
             vecNev[i] = 0;
+            cout << "x[" << i << "] = " << b[i] << endl;
+        }
+        
         for (int i = 0; i < matrix_size; i++)
         {
             for (int j = 0; j < matrix_size; j++)
